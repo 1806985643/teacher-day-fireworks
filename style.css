@@ -24,7 +24,7 @@ body, html {
     left: 50%;
     transform: translate(-50%, -50%); /* 完美居中 */
     font-family: 'Ma Shan Zheng', cursive; /* 使用引入的艺术字体 */
-    font-size: 4em; /* 字体大小 */
+    font-size: 3em; /* 字体大小 */
     color: white;
     text-align: center;
     opacity: 0; /* 初始完全透明 */
@@ -48,6 +48,6 @@ body, html {
 /* 手机等小屏幕设备适配 */
 @media (max-width: 600px) {
     #greetingText {
-        font-size: 2.5em;
+        font-size: 2em;
     }
 }
