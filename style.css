@@ -3,8 +3,9 @@ body, html {
     padding: 0;
     width: 100%;
     height: 100%;
-    overflow: hidden; /* 隐藏滚动条 */
-    background-color: #000; /* 黑色背景 */
+    overflow: hidden;
+    background-color: #000;
+    font-family: 'Ma Shan Zheng', cursive;
 }
 
 /* 让画布覆盖整个屏幕 */
@@ -17,37 +18,43 @@ body, html {
     display: block;
 }
 
-/* 设置“教师节快乐！”文字的样式 */
+/* 设置"教师节快乐！"文字的样式 - 确保不换行 */
 #greetingText {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); /* 完美居中 */
-    font-family: 'Ma Shan Zheng', cursive; /* 使用引入的艺术字体 */
-    font-size: 3em; /* 字体大小 */
+    transform: translate(-50%, -50%);
+    font-size: 3em;
     color: white;
     text-align: center;
-    opacity: 0; /* 初始完全透明 */
+    opacity: 0;
+    white-space: nowrap; /* 确保文字不换行 */
     text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
                  0 0 20px rgba(255, 0, 0, 0.7),
-                 0 0 30px rgba(255, 165, 0, 0.6); /* 发光效果 */
-    /* 渐显动画，持续3秒，延迟1秒开始，结束后保持最终状态 */
+                 0 0 30px rgba(255, 165, 0, 0.6);
     animation: fadeIn 3s ease-in-out 1s forwards;
 }
 
 /* 定义渐显动画 */
 @keyframes fadeIn {
-    from {
-        opacity: 0;
-    }
-    to {
-        opacity: 1;
-    }
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
 
 /* 手机等小屏幕设备适配 */
 @media (max-width: 600px) {
     #greetingText {
-        font-size: 2em;
+        font-size: 2em; /* 小屏幕上使用更小的字体 */
+        /* 确保在小屏幕上也不换行 */
+        white-space: nowrap;
+        /* 添加左右内边距，防止文字太靠近屏幕边缘 */
+        padding: 0 10px;
+    }
+}
+
+/* 超小屏幕设备适配 */
+@media (max-width: 400px) {
+    #greetingText {
+        font-size: 1.7em; /* 在超小屏幕上进一步减小字体 */
     }
 }
