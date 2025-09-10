@@ -55,6 +55,6 @@ body, html {
 /* 超小屏幕设备适配 */
 @media (max-width: 400px) {
     #greetingText {
-        font-size: 1.7em; /* 在超小屏幕上进一步减小字体 */
+        font-size: 2em; /* 在超小屏幕上进一步减小字体 */
     }
 }
