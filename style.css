@@ -1,0 +1,53 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden; /* 隐藏滚动条 */
+    background-color: #000; /* 黑色背景 */
+}
+
+/* 让画布覆盖整个屏幕 */
+#fireworksCanvas {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+/* 设置“教师节快乐！”文字的样式 */
+#greetingText {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 完美居中 */
+    font-family: 'Ma Shan Zheng', cursive; /* 使用引入的艺术字体 */
+    font-size: 4em; /* 字体大小 */
+    color: white;
+    text-align: center;
+    opacity: 0; /* 初始完全透明 */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 
+                 0 0 20px rgba(255, 0, 0, 0.7),
+                 0 0 30px rgba(255, 165, 0, 0.6); /* 发光效果 */
+    /* 渐显动画，持续3秒，延迟1秒开始，结束后保持最终状态 */
+    animation: fadeIn 3s ease-in-out 1s forwards;
+}
+
+/* 定义渐显动画 */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+/* 手机等小屏幕设备适配 */
+@media (max-width: 600px) {
+    #greetingText {
+        font-size: 2.5em;
+    }
+}
